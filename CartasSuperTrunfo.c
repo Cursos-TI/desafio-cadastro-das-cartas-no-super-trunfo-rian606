@@ -4,14 +4,14 @@
     //trabalho de programação: nivel novato
     //nivel aventureiro
     //nivel mestre
-
+    //nivel novato (logica)
 int main(){
     
     
     char codigo[20], codigo2[20]; //codigo (b01, a02, etc)
     char cidade[50], cidade2[50]; //nome da cidade (Curitiba, fortaleza, etc)
     unsigned long int população, população2; //numero da população (9000000, 8000000, etc)
-    float area, area2; //area em km^2SW
+    float area, area2; //area em km^2
     float pib, pib2; //PIB (produto interno bruto aproximado)
     int turistico, turistico2; //numero de pontos turisticos
     float pibpercapita, pibpercapita2; //valor do pib per capita
@@ -69,7 +69,7 @@ int main(){
     densidadedemografica = (float) população / area;
     densidadedemografica2 = (float) população2 / area2;
 
-    // adicionarei resultados
+    // adicionarei resultados "nao sera mais necessario mas manterei aqui"
     int resultadoPopulacao = população > população2;
     int resultadoArea = area > area2;
     int resultadoPIB = pib > pib2;
@@ -85,14 +85,49 @@ int main(){
 
     //retirei a exibicao das cartas, e adicionarei os resultados e o super poder
 
-    printf("para os resultados usaremos 1 se a carta 1 vencer e 0 se a carta 2 vencer!\n");
-    printf("População: %d\n", resultadoPopulacao);
-    printf("Area: %d\n", resultadoArea);
-    printf("PIB: %d\n", resultadoPIB);
-    printf("Turistico: %d\n", resultadoTuristico);
-    printf("Renda per capita: %d\n", resultadoPIBpercapita);
-    printf("Densidade populacional: %d\n", resultadoDensidadeDemografica);
-    printf("SuperPoder: %d\n", poderCarta1 > poderCarta2);
+    printf("vamos aos resultados!\n");
+    // desafio logica novato
+
+    //primeiro as informações
+
+    printf("População\n Carta 1 - %s: %lu / Carta 2 - %s: %lu\n", cidade, população, cidade2, população2);
+    
+    if(população > população2){
+        printf("carta 1 venceu! %s\n\n", cidade);
+    }else printf("carta 2 venceu! %s\n\n", cidade2);//comparacao e escolha do vencedor
+
+    printf("area\n Carta 1 - %s: %2.f / Carta 2 - %s: %2.f\n", cidade, area, cidade2, area2);
+    if(area > area2){
+        printf("carta 1 venceu! %s\n\n", cidade);
+    }else printf("carta 2 venceu! %s\n\n", cidade2);
+
+    printf("PIB\n Carta 1 - %s: %2.f / Carta 2 - %s: %2.f\n", cidade, pib, cidade2, pib2);
+    if(pib > pib2){
+        printf("carta 1 venceu! %s\n\n", cidade);
+    }else printf("carta 2 venceu! %s\n\n", cidade2);
+
+    printf("turistico\n Carta 1 - %s: %d / Carta 2 - %s: %d\n", cidade, turistico, cidade2, turistico2);
+    if(turistico > turistico2){
+        printf("carta 1 venceu! %s\n\n", cidade);
+    }else printf("carta 2 venceu! %s\n\n", cidade2);
+
+    printf("renda per capita\n Carta 1 - %s: %2.f /  Carta 2 - %s: %2.f\n", cidade, pibpercapita, cidade2, pibpercapita2);
+    if(pibpercapita > pibpercapita2){
+        printf("carta 1 venceu! %s\n\n", cidade);
+    }else printf("carta 2 venceu! %s\n\n", cidade2);
+
+    printf("densidade demografica\n Carta 1 - %s: %2.f /  Carta 2 - %s: %2.f\n", cidade, densidadedemografica, cidade2, densidadedemografica2);
+    if(densidadedemografica < densidadedemografica2){
+        printf("carta 1 venceu! %s\n\n", cidade);
+    }else printf("carta 2 venceu! %s\n\n", cidade2);
+
+    printf("super poder\n Carta 1 - %s: %d / Carta 2 - %s: %d\n", cidade, poderCarta1, cidade2, poderCarta2);
+    if(poderCarta1 > poderCarta2){
+        printf("carta 1 venceu! %s\n\n", cidade);
+    }else printf("carta 2 venceu! %s\n\n", cidade2);
+
+   
+    
 
 
 
