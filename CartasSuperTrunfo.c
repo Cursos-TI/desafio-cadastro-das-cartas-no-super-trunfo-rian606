@@ -4,7 +4,7 @@
     //trabalho de programação: nivel novato
     //nivel aventureiro
     //nivel mestre
-    //nivel novato (logica)
+
 int main(){
     
     
@@ -16,7 +16,7 @@ int main(){
     int turistico, turistico2; //numero de pontos turisticos
     float pibpercapita, pibpercapita2; //valor do pib per capita
     float densidadedemografica, densidadedemografica2; //valor da densidade demografica
-    
+    int opcao;
 
     printf("para iniciar nosso jogo, vou listar algumas informações. \n este jogo compara duas cartas, assim sendo apenas digite algumas informações!\n");
 
@@ -69,7 +69,7 @@ int main(){
     densidadedemografica = (float) população / area;
     densidadedemografica2 = (float) população2 / area2;
 
-    // adicionarei resultados "nao sera mais necessario mas manterei aqui"
+    // adicionarei resultados
     int resultadoPopulacao = população > população2;
     int resultadoArea = area > area2;
     int resultadoPIB = pib > pib2;
@@ -126,9 +126,80 @@ int main(){
         printf("carta 1 venceu! %s\n\n", cidade);
     }else printf("carta 2 venceu! %s\n\n", cidade2);
 
-   
-    
+   //escolha de atributo para comparacao
 
+   printf("** AGORA VAMOS AO JOGO **\n");
+   printf("- Escolha a comparacao que deseja fazer!\n");
+   printf("1. População\n");
+   printf("2. Área\n");
+   printf("3. PIB\n");
+   printf("4. Número de pontos turísticos\n");
+   printf("5. Densidade demográfica\n");
+   printf("escolha uma opção!\n");
+   scanf("%d", &opcao);
+
+   switch (opcao)
+   {
+   case 1:
+    if(população > população2){
+        printf("Nome: %s X %s\nPopulação: %lu X %lu\nVencedor: Carta 1\n", cidade, cidade2, população, população2);
+    }else if(população < população2){
+        printf("Nome: %s X %s\nPopulação: %lu X %lu\nVencedor: Carta 2\n", cidade, cidade2, população, população2);
+    }else{
+        printf("Nome: %s X %s\nPopulação: %lu X %lu\n Empate!\n", cidade, cidade2, população, população2);
+    }
+    
+    break;
+
+    case 2:
+    if(area > area2){
+        printf("Nome: %s X %s\nÁrea: %.2f X %.2f\nVencedor: Carta 1\n", cidade, cidade2, area, area2);
+    }else if(area < area2){
+        printf("Nome: %s X %s\nÁrea: %.2f X %.2f\nVencedor: Carta 2\n", cidade, cidade2, area, area2);
+    }else{
+        printf("Nome: %s X %s\nÁrea: %.2f X %.2f\n Empate!\n", cidade, cidade2, area, area2);
+    }
+
+    break;
+
+    case 3:
+    if(pib > pib2){
+        printf("Nome: %s X %s\nPIB: %.2f X %.2f\nVencedor: Carta 1\n", cidade, cidade2, pib, pib2);
+    }else if(pib < pib2){
+        printf("Nome: %s X %s\nPIB: %.2f X %.2f\nVencedor: Carta 2\n", cidade, cidade2, pib, pib2);
+    }else{
+        printf("Nome: %s X %s\nPIB: %.2f X %.2f\n Empate!\n", cidade, cidade2, pib, pib2);
+    }
+
+    break;
+
+    case 4:
+    if(turistico > turistico2){
+        printf("Nome: %s X %s\nPontos turisticos: %d X %d\nVencedor: Carta 1\n", cidade, cidade2, turistico, turistico2);
+    }else if(turistico < turistico2){
+        printf("Nome: %s X %s\nPontos turisticos: %d X %d\nVencedor: Carta 2\n", cidade, cidade2, turistico, turistico2);
+    }else{
+        printf("Nome: %s X %s\nPontos turisticos: %d X %d\n Empate!\n", cidade, cidade2, turistico, turistico2);
+    }
+
+    break;
+
+    case 5:
+    if(densidadedemografica < densidadedemografica2){
+        printf("Nome: %s X %s\nDensidade demografica: %.2f X %.2f\nVencedor: Carta 1\n", cidade, cidade2, densidadedemografica, densidadedemografica2);
+    }else if(densidadedemografica > densidadedemografica2){
+        printf("Nome: %s X %s\nDensidade demografica: %.2f X %.2f\nVencedor: Carta 2\n", cidade, cidade2, densidadedemografica, densidadedemografica2);
+    }else{
+        printf("Nome: %s X %s\nDensidade demografica: %.2f X %.2f\n Empate!\n", cidade, cidade2, densidadedemografica, densidadedemografica2);
+    }
+    break;
+
+
+   
+   default:
+    break;
+    printf("Opção não encontrada!");
+   }
 
 
 
