@@ -4,6 +4,7 @@
     //trabalho de programação: nivel novato
     //nivel aventureiro
     //nivel mestre
+    //ultimo nivel de logica
 
 int main(){
     
@@ -16,7 +17,8 @@ int main(){
     int turistico, turistico2; //numero de pontos turisticos
     float pibpercapita, pibpercapita2; //valor do pib per capita
     float densidadedemografica, densidadedemografica2; //valor da densidade demografica
-    int opcao;
+    int opcao, opcao2, opcao3;
+    int resultado1, resultado2;
 
     printf("para iniciar nosso jogo, vou listar algumas informações. \n este jogo compara duas cartas, assim sendo apenas digite algumas informações!\n");
 
@@ -194,12 +196,105 @@ int main(){
     }
     break;
 
-
-   
-   default:
+    default:
     break;
     printf("Opção não encontrada!");
    }
+
+   //agora nivel mestre usando habilidades aprendidas
+   printf("Agora uma comparacao entre dois atributos!\nCarta 1\n");
+   printf("escolha dois atributos diferentes para comparar:\n");
+   printf("1. População\n");
+   printf("2. Área\n");
+   printf("3. PIB\n");
+   printf("4. Número de pontos turísticos\n");
+   printf("5. Densidade demográfica\n");
+   printf("escolha uma opção!\n");
+   scanf("%d", &opcao2);
+
+   switch (opcao2)
+   {
+   case 1:
+   printf("voce escolheu população!\n");
+    resultado1 = população > população2 ? 1 : 0; 
+    break;
+
+    case 2:
+    printf("voce escolheu area!\n");
+    resultado1 = area > area2 ? 1 : 0;
+    break;
+
+    case 3:
+    printf("voce escolheu PIB!\n");
+    resultado1 = area > area2 ? 1 :0;
+    break;
+    case 4:
+    printf("voce escolheu pontos turisticos!\n");
+    resultado1 = turistico > turistico2 ? 1 : 0;
+    break;
+
+    case 5:
+    printf("voce escolheu densidade demografica!\n");
+    resultado1 = densidadedemografica < densidadedemografica2 ? 1 : 0;
+    break;
+   
+   default:
+   printf("opção invalida!\n");
+    break;
+   }
+
+   printf("Segundo atributo!");
+   printf("1. População\n");
+   printf("2. Área\n");
+   printf("3. PIB\n");
+   printf("4. Número de pontos turísticos\n");
+   printf("5. Densidade demográfica\n");
+   printf("escolha uma opção!\n");
+   scanf("%d", &opcao3);
+
+   if(opcao2 == opcao3){
+    printf("atributos iguais!\n");
+   }else{
+    switch (opcao3)
+    {
+    case 1:
+    printf("voce escolheu população!\n");
+    resultado1 = população > população2 ? 1 : 0;
+    break;
+
+    case 2:
+    printf("voce escolheu area!\n");
+    resultado2 = area > area2 ? 1 : 0;
+    break;
+
+    case 3:
+    printf("voce escolheu PIB!\n");
+    resultado2 = area > area2 ? 1 :0;
+    break;
+
+    case 4:
+    printf("voce escolheu pontos turisticos!\n");
+    resultado2 = turistico > turistico2 ? 1 : 0;
+    break;
+
+    case 5:
+    printf("voce escolheu densidade demografica!\n");
+    resultado2 = densidadedemografica < densidadedemografica2 ? 1 : 0;
+    break;
+    
+    default:
+    printf("opção invalida!\n");
+        break;
+    }}
+
+    if(resultado1 && resultado2){
+        printf("carta 1 venceu!\n");
+    }else if(resultado1 != resultado2){
+        printf("Empate\n");
+    }else{
+        printf("carta 2 venceu!\n");
+    }
+   
 
 
 
